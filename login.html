@@ -13,31 +13,31 @@
       crossorigin="anonymous"
     />
   </head>
-<style>
-  html,
-body {
-  height: 100%;
-  text-align: center;
-}
+  <style>
+    html,
+    body {
+      height: 100%;
+      text-align: center;
+    }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-</style>
+    .form-signin {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+    }
+  </style>
   <body>
     <div id="app">
       <div class="container">
         <div class="row justify-content-center">
-          <h1 class="h3 mb-3 font-weight-normal ">請先登入</h1>
+          <h1 class="h3 mb-3 font-weight-normal">請先登入</h1>
           <div class="col-8">
             <form id="form" class="form-signin" @submit.prevent="login">
               <div class="form-floating mb-3">
@@ -87,7 +87,7 @@ body {
           return {
             user: {
               // v-model綁定
-              username: '',//API資料格式:屬性
+              username: '', //API資料格式:屬性
               password: '',
             },
           };
@@ -102,18 +102,19 @@ body {
               //成功登入
               .then((res) => {
                 const { token, expired } = res.data;
-//解構token,expired   token登入憑證  expired時間戳記
+                //解構token,expired   token登入憑證  expired時間戳記
 
                 document.cookie = `hexToken=${token}; expires=${new Date(
                   expired
                 )}; path=/`;
-//將tkoen存入網站cookie 設定expired
+                //將tkoen存入網站cookie 設定expired
 
                 window.location = 'index.html';
                 //成功後 跳轉到index.html
               })
-              .catch((err) => {//失敗
-                alert(err.response.data.message);//alert跳出失敗訊息
+              .catch((err) => {
+                //失敗
+                alert(err.response.data.message); //alert跳出失敗訊息
               });
           },
         },

@@ -134,13 +134,14 @@
           return {
             apiUrl: 'https://vue3-course-api.hexschool.io/v2',
             apiPath: 'orzorzorz',
-            products: [],//定義資料格式
+            products: [], //定義資料格式
             tempProduct: {}, //將products 放到tempProduct 暫存區 用於存取查看單一產品資料
           };
         },
 
         methods: {
-          checkAdmin() { //驗證
+          checkAdmin() {
+            //驗證
             const url = `${this.apiUrl}/api/user/check`;
             axios
               .post(url)
@@ -153,7 +154,8 @@
                 //失敗會跳出訊息、跳轉回login.html頁面
               });
           },
-          getProducts() {//取得產品方法
+          getProducts() {
+            //取得產品方法
             const url = `${this.apiUrl}/api/${this.apiPath}/admin/products`;
             axios
               .get(url)
