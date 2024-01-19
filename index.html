@@ -168,14 +168,14 @@
               });
           },
         },
-        mounted() {
-          // 取出 Token
+        mounted() { //掛載
+          // 取得 Token
           const token = document.cookie.replace(
             /(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/,
             '$1'
           );
           axios.defaults.headers.common.Authorization = token;
-
+          //將token加入到headers
           this.checkAdmin();
         },
       };

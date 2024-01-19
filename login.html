@@ -107,8 +107,9 @@
                 document.cookie = `hexToken=${token}; expires=${new Date(
                   expired
                 )}; path=/`;
-                //將tkoen存入網站cookie 設定expired
-
+                // https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie
+                //token、expired 存入到cookie
+                //token 每次登入都會不同
                 window.location = 'index.html';
                 //成功後 跳轉到index.html
               })
