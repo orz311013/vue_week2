@@ -175,7 +175,8 @@
             '$1'
           );
           axios.defaults.headers.common.Authorization = token;
-          //將token加入到headers
+          // 將token內容加到 headers裡
+          // https://github.com/axios/axios?tab=readme-ov-file#-axiosheaders
           this.checkAdmin();
         },
       };
