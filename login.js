@@ -1,6 +1,7 @@
 
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.14/vue.esm-browser.min.js';
 
+
 createApp({
     data() {
         return {
@@ -29,7 +30,7 @@ createApp({
                     // https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie
                     //token、expired 存入到cookie
                     //token 每次登入都會不同
-                    window.location = 'week3.html';
+                    window.location = 'week2.html';
                     //成功後 跳轉到index.html
                 })
                 .catch((err) => {
